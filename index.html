@@ -32,10 +32,10 @@
   <br>
   <br>
   <button onclick="calculate()">Generate Names</button>
-  <p id="names"></p>
+  <div id="names"></div>
   
   <script type="text/javascript">
-  var paragraph = document.getElementById("names");
+  var nameDiv = document.getElementById("names");
   var lyrics = document.getElementById("songLyrics");
   function calculate() {
     lyrics.value = lyrics.value.replace(/\n/g, " ");
@@ -48,11 +48,20 @@
     if (name.length + currentWord.length <= 16) {
     name += currentWord;
     } else {
-    paragraph.textContent += name + "\n\r";
+    var nameP = document.createElement('p');
+    var nameText = document.createTextNode(name);
+    nameP.appendChild(nameText);
+    nameDiv.appendChild(nameP);
+    //paragraph.textContent += name + "\n\r";
     name = currentWord;
     }
     }
-    paragraph.textContent += name;
+    if (name.length != 0) {
+    var nameP = document.createElement('p');
+    var nameText = document.createTextNode(name);
+    nameP.appendChild(nameText);
+    nameDiv.appendChild(nameP);
+    }
     lyrics.value = '';
   }
 </script>
