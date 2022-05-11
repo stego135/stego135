@@ -8,15 +8,29 @@
     h1 {
       text-align: center;
     }
+    #songLyrics {
+      width: 100%;
+      border: 2px solid green;
+      border-radius: 4px;
+    }
+    button {
+      border-radius: 12px;
+      border: none;
+      background-color: #4f9c49;
+      color: white;
+      font-size: 16px;
+    }
   </style>
 </head>
 
 <body>
   <h1>Convert a Song Into an Offspring List</h1>
   <p>It's so basic I'm sowwy</p>
-  <label for="songLyrics">Put song lyrics here</label>
+  <p>Insert song lyrics below:</p>
   <input type="text" id="songLyrics">
-  <button onclick="calculate()">Click here</button>
+  <br>
+  <br>
+  <button onclick="calculate()">Generate Names</button>
   <p id="names"></p>
   
   <script type="text/javascript">
