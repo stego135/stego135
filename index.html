@@ -38,6 +38,7 @@
   var nameDiv = document.getElementById("names");
   var lyrics = document.getElementById("songLyrics");
   function calculate() {
+    nameDiv.innerHTML = "";
     lyrics.value = lyrics.value.replace(/\n/g, " ");
     var wordArray = lyrics.value.split(" ");
     var name = "";
