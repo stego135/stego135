@@ -36,9 +36,24 @@
   
   <script type="text/javascript">
   var paragraph = document.getElementById("names");
+  var lyrics = document.getElementById("songLyrics");
   function calculate() {
-    paragraph.textContent += document.getElementById("songLyrics").value;
-    document.getElementById("songLyrics").value = '';
+    lyrics.value = lyrics.value.replace(/\n/g, " ");
+    var wordArray = lyrics.value.split(" ");
+    var name = "";
+    for (let x = 0; x < wordArray.length; x++) {
+    var currentWord = wordArray[x];
+    currentWord = currentWord.replaceAll(/[^A-Za-z]/g, "");
+    currentWord = currentWord.charAt(0).toUpperCase() + currentWord.slice(1);
+    if (name.length + currentWord.length <= 16) {
+    name += currentWord;
+    } else {
+    paragraph.textContent += name + "\n\r";
+    name = currentWord;
+    }
+    }
+    paragraph.textContent += name;
+    lyrics.value = '';
   }
 </script>
 </body>
