@@ -10,6 +10,7 @@
     }
     #songLyrics {
       width: 100%;
+      height: 150px;
       border: 2px solid green;
       border-radius: 4px;
     }
@@ -27,7 +28,7 @@
   <h1>Convert a Song Into an Offspring List</h1>
   <p>It's so basic I'm sowwy</p>
   <p>Insert song lyrics below:</p>
-  <input type="text" id="songLyrics">
+  <textarea id="songLyrics"></textarea>
   <br>
   <br>
   <button onclick="calculate()">Generate Names</button>
@@ -37,7 +38,7 @@
   var paragraph = document.getElementById("names");
   function calculate() {
     paragraph.textContent += document.getElementById("songLyrics").value;
-    
+    document.getElementById("songLyrics").value = '';
   }
 </script>
 </body>
