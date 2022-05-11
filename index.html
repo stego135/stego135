@@ -1,8 +1,29 @@
 <head>
   <title>It's a page!</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      background-color: lightgreen;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-  <p>wow</p>
+  <h1>Convert a Song Into an Offspring List</h1>
+  <p>It's so basic I'm sowwy</p>
+  <label for="songLyrics">Put song lyrics here</label>
+  <input type="text" id="songLyrics">
+  <button onclick="calculate()">Click here</button>
+  <p id="names"></p>
+  
+  <script type="text/javascript">
+  var paragraph = document.getElementById("names");
+  function calculate() {
+    paragraph.textContent += "it works!"
+    
+  }
+</script>
 </body>
